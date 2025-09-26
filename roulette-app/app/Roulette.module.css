@@ -1,0 +1,184 @@
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.title {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.settings {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 350px;
+}
+
+.settings h2 {
+  margin-top: 0;
+  color: #555;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.input, .inputWeight {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.inputWeight {
+  width: 70px;
+}
+
+.cheatLabel {
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  user-select: none;
+}
+.cheatLabel input {
+  display: none;
+}
+
+.removeButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.addButton, .clearCheatButton {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.addButton {
+  background-color: #0070f3;
+  color: white;
+}
+
+.clearCheatButton {
+  background-color: #f0ad4e;
+  color: white;
+}
+.clearCheatButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.rouletteArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.pointer {
+  font-size: 3rem;
+  color: #e74c3c;
+  position: relative;
+  top: 25px;
+  z-index: 10;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+.wheel {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 5s cubic-bezier(0.25, 1, 0.5, 1); /* ease-outのような動き */
+}
+
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0 0 5px white;
+    max-width: 80px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.spinButton {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: linear-gradient(145deg, #5cb85c, #4cae4c);
+  box-shadow: 0 5px #398439;
+  transition: all 0.1s ease-in-out;
+}
+
+.spinButton:disabled {
+  background: linear-gradient(145deg, #ccc, #bbb);
+  box-shadow: 0 5px #999;
+  cursor: not-allowed;
+}
+
+.spinButton:active:not(:disabled) {
+    transform: translateY(3px);
+    box-shadow: 0 2px #398439;
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d9534f;
+  animation: bounceIn 0.5s;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}

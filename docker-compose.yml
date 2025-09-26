@@ -1,0 +1,11 @@
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile_node_dev
+    volumes:
+      - ./roulette-app:/app
+
+    ports:
+      - "3000:3000"
+    tty: true
